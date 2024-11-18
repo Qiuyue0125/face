@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/suliao_avator.png</file>
+        <file>shaders/round_corner.frag.qsb</file>
+        <file>resources/094 Cloudy Apple - trans.png</file>
+    </qresource>
+</RCC>
