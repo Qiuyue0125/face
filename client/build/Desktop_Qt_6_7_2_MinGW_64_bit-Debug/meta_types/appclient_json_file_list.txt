@@ -1,2 +1,0 @@
-C:/Users/Administrator/Desktop/QT_project/Faces/client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/appclient_autogen/include/../EWIEGA46WW/moc_facedetector.cpp.json
-C:/Users/Administrator/Desktop/QT_project/Faces/client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/appclient_autogen/include/../EWIEGA46WW/moc_threads.cpp.json
