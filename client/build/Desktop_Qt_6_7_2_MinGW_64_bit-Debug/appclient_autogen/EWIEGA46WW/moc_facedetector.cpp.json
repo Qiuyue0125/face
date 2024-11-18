@@ -1,0 +1,70 @@
+{
+    "classes": [
+        {
+            "className": "FaceDetector",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "addr",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "name": "startDetection",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "detectQuit",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "FaceDetector",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "imageCaptured",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "name": "identitySuccess",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ima",
+                            "type": "QImage"
+                        },
+                        {
+                            "name": "count",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getResult",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "facedetector.h",
+    "outputRevision": 68
+}

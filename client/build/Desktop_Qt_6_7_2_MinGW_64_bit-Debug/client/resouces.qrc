@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/Back.png</file>
+        <file>resources/suliao_avator.png</file>
+        <file>shaders/round_corner.frag.qsb</file>
+        <file>resources/face_border.png</file>
+    </qresource>
+</RCC>
