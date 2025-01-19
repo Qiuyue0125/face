@@ -39,6 +39,7 @@ void ClientHandler::handleData() {
         }
     }
     qDebug()<<"遍历完了";
+    this->~ClientHandler();
 }
 
 
