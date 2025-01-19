@@ -52,6 +52,9 @@ void FaceDetector::processFrame()
     DealImage* task = new DealImage(address, image.clone(), currentCount);
     connect(task, &QThread::finished, task, &QObject::deleteLater);
     connect(task, &DealImage::done, this, &FaceDetector::getResult);
+    connect(task, &DealImage::finished,[&task]() {
+        delete task;
+    });
     task->start();
 }
 
