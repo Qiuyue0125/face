@@ -140,7 +140,7 @@ void ServerCPP::processPendingDatagrams()
         QByteArray data = datagram.data();
         QHostAddress senderAddress = datagram.senderAddress();
         quint16 senderPort = datagram.senderPort();
-        auto handler = std::make_shared<ClientHandler>(data, senderAddress, senderPort, this);
+        ClientHandler* handler = new ClientHandler(data, senderAddress, senderPort, this);
         QThreadPool::globalInstance()->start([handler]() {
             handler->handleData();
         });
