@@ -91,6 +91,9 @@ void ServerCPP::chooseFaceImage(const QUrl &url)
         emit logoFail();
         thread->deleteLater();
     });
+    connect(thread, &CheckFaceThread::finished,[&thread]() {
+        delete thread;
+    });
     thread->start();
 }
 
@@ -142,6 +145,9 @@ void ServerCPP::processPendingDatagrams()
         quint16 senderPort = datagram.senderPort();
         ClientHandler* handler = new ClientHandler(data, senderAddress, senderPort, this);
         QThreadPool::globalInstance()->start([handler]() {
+            connect(handler, &ClientHandler::done, [handler]() {
+                handler->deleteLater();
+            });
             handler->handleData();
         });
     }
