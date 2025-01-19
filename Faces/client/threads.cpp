@@ -23,6 +23,7 @@ void DealImage::run()
         analysisThread->start();
     }
     emit done(MatToQImage(myImage), myCount);
+    this->~DealImage();
 }
 
 
