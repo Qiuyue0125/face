@@ -17,6 +17,9 @@ public:
     void handleData();
     bool compareFeatures(const QString& dbFeatures, const QString& receivedFeatures);
     void insertAttendanceRecord(const QString& name, const QString& location);
+    
+signals:
+    void done();    
 
 private:
     QByteArray data;
