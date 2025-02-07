@@ -47,6 +47,7 @@ void FaceDetector::processFrame()
     int currentCount;
     {
         QMutexLocker locker(&mutex);
+        count %= 500;
         currentCount = count++;
     }
     DealImage* task = new DealImage(address, image.clone(), currentCount);
