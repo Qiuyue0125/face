@@ -14,16 +14,18 @@ DealImage::DealImage(const QString& locat, const Mat& image, int count,  QObject
 void DealImage::run()
 {
     flip(myImage, myImage, 1);
-    Mat face;
-    face = myImage(Range(0, myImage.rows / 3 * 2), Range(myImage.cols / 6, myImage.cols / 6 * 5));
-    std::vector<Rect> faces;
     if (myCount % 6 == 0) {
+        Mat face;
+        face = myImage(Range(0, myImage.rows / 3 * 2), Range(myImage.cols / 6, myImage.cols / 6 * 5));
+        std::vector<Rect> faces;
         FaceAnalysisThread* analysisThread = new FaceAnalysisThread(location, face);
         connect(analysisThread, &QThread::finished, analysisThread, &QObject::deleteLater);
         analysisThread->start();
+        emit done(MatToQImage(myImage), myCount);
+        sleep(1000);
+        return;
     }
     emit done(MatToQImage(myImage), myCount);
-    this->~DealImage();
 }
 
 
